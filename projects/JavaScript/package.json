@@ -1,0 +1,26 @@
+{
+  "name": "md-to-html-web-converter",
+  "version": "1.0.0",
+  "description": "Simple project for laboratory work 3 from the discipline \"Methodologies and technologies of software development\"",
+  "author": "Mykola Kushnir <mykola.kushnir.825@gmail.com>",
+  "license": "MIT",
+  "main": "lib/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node lib/server.js",
+    "dev": "nodemon lib/server.js",
+    "lint": "eslint .",
+    "fmt": "eslint --fix ."
+  },
+  "dependencies": {
+    "@fastify/static": "^7.0.3",
+    "fastify": "^4.26.2",
+    "mtrpz-lab-2": "github:kushnirko/mtrpz-lab-2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "nodemon": "^3.1.0"
+  }
+}

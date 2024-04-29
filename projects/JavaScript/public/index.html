@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=0">
+  <title>Markdown to HTML</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" type="module"></script>
+</head>
+<body>
+  <div>
+    <h1>Markdown</h1>
+    <label for="md-input">Paste your Markdown text here:</label>
+    <textarea id="md-input"></textarea>
+    <button id="btn-convert">Convert</button>
+  </div>
+  <div>
+    <h1>HTML</h1>
+    <label id="label-output" for="html-output">Generated HTML fragment:</label>
+    <textarea id="html-output" readonly></textarea>
+    <button id="btn-clear">Clear</button>
+  </div>
+</body>
+</html>
