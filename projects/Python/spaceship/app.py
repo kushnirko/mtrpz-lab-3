@@ -21,7 +21,7 @@ def make_app(settings: Settings) -> FastAPI:
     app.include_router(api.router, prefix='/api', tags=['api'])
     app.include_router(health.router, prefix='/health', tags=['health'])
 
-    @app.get('/home', include_in_schema=False, response_class=FileResponse)
+    @app.get('/', include_in_schema=False, response_class=FileResponse)
     async def root() -> str:
         return 'build/index.html'
 
