@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o build/fizzbuzz
+RUN CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -o build/fizzbuzz
 
 # Stage 2: Copy the built binary to a new empty image
 FROM scratch
