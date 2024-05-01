@@ -30,3 +30,12 @@ fastify.listen({ port: 8080 }, (err, address) => {
   }
   console.log(`server is listening on ${address}`);
 });
+
+const shutdown = async () => {
+  console.log('server is shutting down');
+  await fastify.close();
+  process.exit(0);
+};
+
+process.once('SIGINT', shutdown);
+process.once('SIGTERM', shutdown);
