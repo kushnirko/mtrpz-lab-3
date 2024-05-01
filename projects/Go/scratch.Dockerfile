@@ -10,9 +10,10 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -o build/fizzbuzz
 
-# Stage 2: Copy the built binary to a new empty image
+# Stage 2: Copy the built binary and web page layout to a new empty image
 FROM scratch
 
 COPY --from=builder /app/build/fizzbuzz .
+COPY --from=builder /app/templates ./templates
 
 CMD ["./fizzbuzz", "serve"]
