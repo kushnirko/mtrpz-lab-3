@@ -1,4 +1,4 @@
-FROM node:20.12.2-alpine
+FROM node:20.12.2-alpine AS builder
 
 WORKDIR /app
 
@@ -7,4 +7,10 @@ RUN npm clean-install --omit=dev
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+FROM gcr.io/distroless/nodejs20-debian11
+
+WORKDIR /app
+
+COPY --from=builder /app .
+
+CMD ["lib/server.js"]
