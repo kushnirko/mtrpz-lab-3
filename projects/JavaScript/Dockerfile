@@ -1,4 +1,6 @@
-FROM node:20.12.2-alpine
+FROM alpine
+
+RUN apk add --no-cache nodejs npm
 
 WORKDIR /app
 
@@ -7,4 +9,4 @@ RUN npm clean-install --omit=dev
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+CMD ["node", "lib/server.js"]
